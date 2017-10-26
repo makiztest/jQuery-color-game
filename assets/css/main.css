@@ -1,3 +1,22 @@
 body {
     background: cadetblue;
 }
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.square {
+    background: palevioletred;
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}
