@@ -1,6 +1,6 @@
 var colors = generateRandomColors(6);
-
 var squares = $(".square");
+var h1 = $("h1");
 var pickedColor = pickColor();
 var colorDisplay = $(".colorDisplay");
 var messageDisplay = $(".messageDisplay");
@@ -14,6 +14,7 @@ squares.each(function(arr) {
     if (clickedColor === pickedColor) {
       messageDisplay.text("Correct");
       changeColors(pickedColor);
+      h1.css("backgroundColor", pickedColor)
     } else {
       $(this).css("backgroundColor", "cadetblue");
       messageDisplay.text("Try Again");
@@ -36,8 +37,7 @@ function generateRandomColors(num) {
   var arr = [];
   $.each(new Array(num), function() {
     arr.push(randomColor());
-    console.log(num)
-  })
+  });
   return arr;
 }
 
