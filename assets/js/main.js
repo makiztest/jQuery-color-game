@@ -9,8 +9,8 @@ colorDisplay.text(pickedColor);
 
 squares.each(function(arr) {
   $(this).css("backgroundColor", colors[arr]);
-  var clickedColor = $(this).css("backgroundColor");
   $(this).click(function() {
+    var clickedColor = $(this).css("backgroundColor");
     if (clickedColor === pickedColor) {
       messageDisplay.text("Correct");
       changeColors(pickedColor);
