@@ -19,11 +19,17 @@ squares.each(function(arr) {
     var clickedColor = $(this).css("backgroundColor")
     $(this).click(function() {
         if(clickedColor === pickedColor) {
-            console.log("colorpicked")
             messageDisplay.text("Correct")
+            changeColors(pickedColor);
         } else {
             $(this).css("backgroundColor", "cadetblue")
             messageDisplay.text("Try Again")
         }
     })
 })
+
+function changeColors(color) {
+    squares.each(function() {
+        $(this).css("backgroundColor", color)
+    })
+}
