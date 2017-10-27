@@ -4,8 +4,28 @@ var h1 = $("h1");
 var pickedColor = pickColor();
 var colorDisplay = $(".colorDisplay");
 var messageDisplay = $(".messageDisplay");
+var resetBtn = $(".reset");
 
-colorDisplay.text(pickedColor);
+// colorDisplay.text(pickedColor);
+resetBtn.click(function() {
+  //generate all new colors
+  colors = generateRandomColors(6);
+  //pixk a new random color from array
+  pickedColor = pickColor();
+  //change color display to match picked color
+  colorDisplay.text(pickedColor);
+  //change colors of square
+  changeRandomColors();
+  $(this).text("New Colors")
+  messageDisplay.text("");
+  h1.css("backgroundColor", "cadetblue")
+});
+
+function changeRandomColors() {
+  squares.each(function(arr) {
+    $(this).css("backgroundColor", colors[arr]);
+  });
+}
 
 squares.each(function(arr) {
   $(this).css("backgroundColor", colors[arr]);
@@ -14,7 +34,8 @@ squares.each(function(arr) {
     if (clickedColor === pickedColor) {
       messageDisplay.text("Correct");
       changeColors(pickedColor);
-      h1.css("backgroundColor", pickedColor)
+      h1.css("backgroundColor", pickedColor);
+      resetBtn.text("Play Again")
     } else {
       $(this).css("backgroundColor", "cadetblue");
       messageDisplay.text("Try Again");

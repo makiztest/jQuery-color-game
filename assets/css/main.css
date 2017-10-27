@@ -24,3 +24,8 @@ p {
     float: left;
     margin: 1.66%;
 }
+
+.stripe {
+    background-color: salmon;
+    text-align: center;
+}
