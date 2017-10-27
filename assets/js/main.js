@@ -8,7 +8,7 @@ var colors = [
 ]
 
 var squares = $(".square");
-var pickedColor = colors[3];
+var pickedColor = pickColor();
 var colorDisplay = $(".colorDisplay");
 var messageDisplay = $(".messageDisplay");
 
@@ -32,4 +32,8 @@ function changeColors(color) {
     squares.each(function() {
         $(this).css("backgroundColor", color)
     })
+}
+
+function pickColor() {
+    console.log(Math.floor(Math.random() * colors.length))
 }
