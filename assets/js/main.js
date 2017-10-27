@@ -35,5 +35,6 @@ function changeColors(color) {
 }
 
 function pickColor() {
-    console.log(Math.floor(Math.random() * colors.length))
+    var random = Math.floor(Math.random() * colors.length)
+    return colors[random]
 }
