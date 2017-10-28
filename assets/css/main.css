@@ -1,6 +1,7 @@
 body {
     background: cadetblue;
     margin: 0;
+    font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -8,6 +9,8 @@ h1 {
     text-align: center;
     margin: 0;
     padding: 50px 0;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 p {

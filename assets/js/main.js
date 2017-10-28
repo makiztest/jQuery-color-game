@@ -9,6 +9,8 @@ var resetBtn = $(".reset");
 var easyBtn = $(".easyBtn");
 var hardBtn = $(".hardBtn");
 
+colorDisplay.text(pickedColor);
+
 easyBtn.click(function() {
   $(this).addClass("selected");
   hardBtn.removeClass("selected");
