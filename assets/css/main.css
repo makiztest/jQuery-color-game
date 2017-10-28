@@ -32,6 +32,7 @@ p {
     float: left;
     margin: 1.66%;
     border-radius: 15%;
+    transition: background .6s;
 }
 
 .stripe {
