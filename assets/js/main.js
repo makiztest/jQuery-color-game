@@ -15,6 +15,7 @@ easyBtn.click(function() {
   pickedColor = pickColor();
   console.log(colors, pickedColor)
   colorDisplay.text(pickedColor);
+  
 });
 
 hardBtn.click(function() {
