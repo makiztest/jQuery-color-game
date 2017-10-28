@@ -18,6 +18,7 @@ easyBtn.click(function() {
   colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
+  h1.css("backgroundColor", "steelblue");
   squares.each(function(arr) {
     if(colors[arr]) {
       console.log(colors[arr])
@@ -35,6 +36,7 @@ hardBtn.click(function() {
   colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
+  h1.css("backgroundColor", "steelblue");
   squares.each(function(arr) {
       console.log(colors[arr])
       $(this).css("backgroundColor", colors[arr])
