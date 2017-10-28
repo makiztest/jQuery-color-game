@@ -40,11 +40,18 @@ p {
 }
 
 .selected {
-    background: blue;
+    background: steelblue;
+    color: snow;
 }
 
 .colorDisplay {
     font-size: 4rem;
+}
+
+.messageDisplay {
+    display: inline-block;
+    background: tomato;
+    width: 20%;
 }
 
 button {
@@ -52,6 +59,12 @@ button {
     background: none;
     text-transform: uppercase;
     height: 100%;
+    font-size: inherit;
     font-weight: 700;
-    color: steelblue;
+    color: rgb(35, 37, 39);
+    letter-spacing: 1px;
+}
+
+button:focus {
+    outline: none;
 }
