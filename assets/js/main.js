@@ -18,6 +18,8 @@ easyBtn.click(function() {
     if(colors[arr]) {
       console.log(colors[arr])
       $(this).css("backgroundColor", colors[arr])
+    } else {
+      $(this).css("display", "none")
     }
   })
 });
