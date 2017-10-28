@@ -1,4 +1,5 @@
-var colors = generateRandomColors(6);
+var numSquares = 6;
+var colors = generateRandomColors(numSquares);
 var squares = $(".square");
 var h1 = $("h1");
 var pickedColor = pickColor();
@@ -11,7 +12,8 @@ var hardBtn = $(".hardBtn");
 easyBtn.click(function() {
   $(this).addClass("selected");
   hardBtn.removeClass("selected");
-  colors = generateRandomColors(3);
+  numSquares = 3;
+  colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
   squares.each(function(arr) {
@@ -27,21 +29,19 @@ easyBtn.click(function() {
 hardBtn.click(function() {
   $(this).addClass("selected");
   easyBtn.removeClass("selected");
-  colors = generateRandomColors(6);
+  numSquares = 6;
+  colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
   squares.each(function(arr) {
-    if(colors[arr]) {
       console.log(colors[arr])
       $(this).css("backgroundColor", colors[arr])
-    } else {
       $(this).css("display", "block")
-    }
   })
 });
 
 resetBtn.click(function() {
-  colors = generateRandomColors(6);
+  colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
   changeRandomColors();
