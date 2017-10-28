@@ -13,9 +13,13 @@ easyBtn.click(function() {
   hardBtn.removeClass("selected");
   colors = generateRandomColors(3);
   pickedColor = pickColor();
-  console.log(colors, pickedColor)
   colorDisplay.text(pickedColor);
-  
+  squares.each(function(arr) {
+    if(colors[arr]) {
+      console.log(colors[arr])
+      $(this).css("backgroundColor", colors[arr])
+    }
+  })
 });
 
 hardBtn.click(function() {
