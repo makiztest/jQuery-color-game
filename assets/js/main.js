@@ -9,25 +9,23 @@ var easyBtn = $(".easyBtn");
 var hardBtn = $(".hardBtn");
 
 easyBtn.click(function() {
-  $(this).addClass("selected")
-  hardBtn.removeClass("selected")
-})
+  $(this).addClass("selected");
+  hardBtn.removeClass("selected");
+  colors = generateRandomColors(3);
+  pickedColor = pickColor();
+  console.log(colors, pickedColor)
+  colorDisplay.text(pickedColor);
+});
 
 hardBtn.click(function() {
-  $(this).addClass("selected")
-  easyBtn.removeClass("selected")
-})
+  $(this).addClass("selected");
+  easyBtn.removeClass("selected");
+});
 
-
-// colorDisplay.text(pickedColor);
 resetBtn.click(function() {
-  //generate all new colors
   colors = generateRandomColors(6);
-  //pixk a new random color from array
   pickedColor = pickColor();
-  //change color display to match picked color
   colorDisplay.text(pickedColor);
-  //change colors of square
   changeRandomColors();
   $(this).text("New Colors");
   messageDisplay.text("");
