@@ -24,7 +24,7 @@ function reset() {
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
   changeRandomColors();
-  $(this).text("New Colors");
+  $(".reset").text("New Colors")
   messageDisplay.text("");
   h1.css("backgroundColor", "steelblue");
   squares.each(function(arr) {
@@ -38,13 +38,7 @@ function reset() {
 }
 
 resetBtn.click(function() {
-  colors = generateRandomColors(numSquares);
-  pickedColor = pickColor();
-  colorDisplay.text(pickedColor);
-  changeRandomColors();
-  $(this).text("New Colors");
-  messageDisplay.text("");
-  h1.css("backgroundColor", "steelblue");
+  reset();
 });
 
 function changeRandomColors() {
