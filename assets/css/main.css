@@ -63,6 +63,7 @@ button {
     font-weight: 700;
     color: rgb(35, 37, 39);
     letter-spacing: 1px;
+    transition: all 0.3s;
 }
 
 button:focus {
