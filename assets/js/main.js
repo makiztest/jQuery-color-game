@@ -49,7 +49,7 @@ resetBtn.click(function() {
   changeRandomColors();
   $(this).text("New Colors");
   messageDisplay.text("");
-  h1.css("backgroundColor", "cadetblue");
+  h1.css("backgroundColor", "steelblue");
 });
 
 function changeRandomColors() {
@@ -68,7 +68,7 @@ squares.each(function(arr) {
       h1.css("backgroundColor", pickedColor);
       resetBtn.text("Play Again");
     } else {
-      $(this).css("backgroundColor", "cadetblue");
+      $(this).css("backgroundColor", "rgb(35, 37, 39)");
       messageDisplay.text("Try Again");
     }
   });
