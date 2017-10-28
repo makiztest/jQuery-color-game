@@ -68,3 +68,8 @@ button {
 button:focus {
     outline: none;
 }
+
+button:hover {
+    color: snow;
+    background: steelblue;
+}
