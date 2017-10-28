@@ -12,45 +12,30 @@ colorDisplay.text(pickedColor);
 
 modeBtn.each(function() {
   $(this).on("click", function() {
-      $("button").removeClass("selected")
-      $(this).addClass("selected")
-  })
-})
+    $("button").removeClass("selected");
+    $(this).addClass("selected");
+    $(this).text() === "Hard" ? (numSquares = 6) : (numSquares = 3);
+    reset();
+  });
+});
 
-// easyBtn.click(function() {
-//   $(this).addClass("selected");
-//   hardBtn.removeClass("selected");
-//   numSquares = 3;
-//   colors = generateRandomColors(numSquares);
-//   pickedColor = pickColor();
-//   colorDisplay.text(pickedColor);
-//   h1.css("backgroundColor", "steelblue");
-//   messageDisplay.text("");
-//   squares.each(function(arr) {
-//     if(colors[arr]) {
-//       console.log(colors[arr])
-//       $(this).css("backgroundColor", colors[arr])
-//     } else {
-//       $(this).css("display", "none")
-//     }
-//   })
-// });
-
-// hardBtn.click(function() {
-//   $(this).addClass("selected");
-//   easyBtn.removeClass("selected");
-//   numSquares = 6;
-//   colors = generateRandomColors(numSquares);
-//   pickedColor = pickColor();
-//   colorDisplay.text(pickedColor);
-//   h1.css("backgroundColor", "steelblue");
-//   messageDisplay.text("");
-//   squares.each(function(arr) {
-//       console.log(colors[arr])
-//       $(this).css("backgroundColor", colors[arr])
-//       $(this).css("display", "block")
-//   })
-// });
+function reset() {
+  colors = generateRandomColors(numSquares);
+  pickedColor = pickColor();
+  colorDisplay.text(pickedColor);
+  changeRandomColors();
+  $(this).text("New Colors");
+  messageDisplay.text("");
+  h1.css("backgroundColor", "steelblue");
+  squares.each(function(arr) {
+    if (colors[arr]) {
+      $(this).css("display", "block");
+      $(this).css("backgroundColor", colors[arr]);
+    } else {
+      $(this).css("display", "none");
+    }
+  });
+}
 
 resetBtn.click(function() {
   colors = generateRandomColors(numSquares);
