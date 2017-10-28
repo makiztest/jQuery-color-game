@@ -27,6 +27,17 @@ easyBtn.click(function() {
 hardBtn.click(function() {
   $(this).addClass("selected");
   easyBtn.removeClass("selected");
+  colors = generateRandomColors(6);
+  pickedColor = pickColor();
+  colorDisplay.text(pickedColor);
+  squares.each(function(arr) {
+    if(colors[arr]) {
+      console.log(colors[arr])
+      $(this).css("backgroundColor", colors[arr])
+    } else {
+      $(this).css("display", "block")
+    }
+  })
 });
 
 resetBtn.click(function() {
