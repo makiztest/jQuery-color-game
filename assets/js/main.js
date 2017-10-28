@@ -1,22 +1,34 @@
 var numSquares = 6;
-var colors = generateRandomColors(numSquares);
+var colors = [];
 var squares = $(".square");
 var h1 = $("h1");
-var pickedColor = pickColor();
+var pickedColor;
 var colorDisplay = $(".colorDisplay");
 var messageDisplay = $(".messageDisplay");
 var resetBtn = $(".reset");
 var modeBtn = $(".mode");
 
-colorDisplay.text(pickedColor);
+init();
 
-modeBtn.each(function() {
-  $(this).on("click", function() {
-    $("button").removeClass("selected");
-    $(this).addClass("selected");
-    $(this).text() === "Hard" ? (numSquares = 6) : (numSquares = 3);
-    reset();
+function init() {
+  modeButton();
+  clickButton()
+  reset();
+}
+
+function modeButton() {
+  modeBtn.each(function() {
+    $(this).on("click", function() {
+      $("button").removeClass("selected");
+      $(this).addClass("selected");
+      $(this).text() === "Hard" ? (numSquares = 6) : (numSquares = 3);
+      reset();
+    });
   });
+}
+
+resetBtn.click(function() {
+  reset();
 });
 
 function reset() {
@@ -24,7 +36,7 @@ function reset() {
   pickedColor = pickColor();
   colorDisplay.text(pickedColor);
   changeRandomColors();
-  $(".reset").text("New Colors")
+  $(".reset").text("New Colors");
   messageDisplay.text("");
   h1.css("backgroundColor", "steelblue");
   squares.each(function(arr) {
@@ -37,31 +49,29 @@ function reset() {
   });
 }
 
-resetBtn.click(function() {
-  reset();
-});
-
 function changeRandomColors() {
   squares.each(function(arr) {
     $(this).css("backgroundColor", colors[arr]);
   });
 }
 
-squares.each(function(arr) {
-  $(this).css("backgroundColor", colors[arr]);
-  $(this).click(function() {
-    var clickedColor = $(this).css("backgroundColor");
-    if (clickedColor === pickedColor) {
-      messageDisplay.text("Correct");
-      changeColors(pickedColor);
-      h1.css("backgroundColor", pickedColor);
-      resetBtn.text("Play Again");
-    } else {
-      $(this).css("backgroundColor", "rgb(35, 37, 39)");
-      messageDisplay.text("Try Again");
-    }
+function clickButton() {
+  squares.each(function(arr) {
+    $(this).css("backgroundColor", colors[arr]);
+    $(this).click(function() {
+      var clickedColor = $(this).css("backgroundColor");
+      if (clickedColor === pickedColor) {
+        messageDisplay.text("Correct");
+        changeColors(pickedColor);
+        h1.css("backgroundColor", pickedColor);
+        resetBtn.text("Play Again");
+      } else {
+        $(this).css("backgroundColor", "rgb(35, 37, 39)");
+        messageDisplay.text("Try Again");
+      }
+    });
   });
-});
+}
 
 function changeColors(color) {
   squares.each(function() {
