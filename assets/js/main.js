@@ -27,9 +27,24 @@ function modeButton() {
   });
 }
 
-resetBtn.click(function() {
-  reset();
-});
+function clickButton() {
+  squares.each(function(arr) {
+    $(this).css("backgroundColor", colors[arr]);
+    $(this).click(function() {
+      var clickedColor = $(this).css("backgroundColor");
+      if (clickedColor === pickedColor) {
+        messageDisplay.text("Correct");
+        changeColors(pickedColor);
+        h1.css("backgroundColor", pickedColor);
+        resetBtn.text("Play Again");
+      } else {
+        $(this).css("backgroundColor", "rgb(35, 37, 39)");
+        messageDisplay.text("Try Again");
+      }
+    });
+  });
+}
+
 
 function reset() {
   colors = generateRandomColors(numSquares);
@@ -49,27 +64,13 @@ function reset() {
   });
 }
 
+resetBtn.click(function() {
+  reset();
+});
+
 function changeRandomColors() {
   squares.each(function(arr) {
     $(this).css("backgroundColor", colors[arr]);
-  });
-}
-
-function clickButton() {
-  squares.each(function(arr) {
-    $(this).css("backgroundColor", colors[arr]);
-    $(this).click(function() {
-      var clickedColor = $(this).css("backgroundColor");
-      if (clickedColor === pickedColor) {
-        messageDisplay.text("Correct");
-        changeColors(pickedColor);
-        h1.css("backgroundColor", pickedColor);
-        resetBtn.text("Play Again");
-      } else {
-        $(this).css("backgroundColor", "rgb(35, 37, 39)");
-        messageDisplay.text("Try Again");
-      }
-    });
   });
 }
 
