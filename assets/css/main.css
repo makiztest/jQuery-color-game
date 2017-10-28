@@ -29,3 +29,7 @@ p {
     background-color: salmon;
     text-align: center;
 }
+
+.selected {
+    background: blue;
+}
