@@ -34,7 +34,7 @@ p {
 .stripe {
     background-color: salmon;
     text-align: center;
-    padding: 10px 0;
+    height: 36px;
 }
 
 .selected {
